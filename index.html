@@ -77,44 +77,6 @@
 										<option value="xl">XL</option>
 									</select>
 									<button type="button" class="size-guide-button modal-target">Size Guide</button>
-									<dialog class="modal" aria-labelledby="size-guide-modal-title" aria-describedby="size-guide-modal-description">
-										<div class="modal-backdrop">
-											<div class="modal-body size-guide">
-												<button type="button" class="modal-close-button" aria-label="close">
-													X
-												</button>
-												<h2 class="heading-2" id="size-guide-modal-title">Size guide</h2>
-												<p id="size-guide-modal-description">Some description about the sizes</p>
-												<table class="size-guide__table">
-													<thead>
-														<tr>
-															<th>EU</th>
-															<th>US</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>36</td>
-															<td>8</td>
-														</tr>
-														<tr>
-															<td>38</td>
-															<td>9</td>
-														</tr>
-														<tr>
-															<td>40</td>
-															<td>10</td>
-														</tr>
-														<tr>
-															<td>42</td>
-															<td>11</td>
-														</tr>
-													</tbody>
-												</table>
-
-											</div>
-										</div>
-									</dialog>
 								</div>
 								<fieldset class="product-card__parameter">
 									<legend class="product-card__label">Color<span aria-hidden="true"> - <span id="productColorValue">White</span></span></legend>
@@ -408,6 +370,41 @@
 				</div>
 			</footer>
 		</div>
+		<dialog id="sizeGuideModal" class="modal" aria-labelledby="size-guide-modal-title" aria-describedby="size-guide-modal-description">
+			<div class="modal-body size-guide">
+				<button autofocus type="button" class="modal-close-button" aria-label="close">
+					X
+				</button>
+				<h2 class="heading-2" id="size-guide-modal-title">Size guide</h2>
+				<p id="size-guide-modal-description">Some description about the sizes</p>
+				<table class="size-guide__table">
+					<thead>
+					<tr>
+						<th>EU</th>
+						<th>US</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>36</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>38</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>40</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>42</td>
+						<td>11</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</dialog>
 		<script src="scripts.js"></script>
 	</body>
 </html>

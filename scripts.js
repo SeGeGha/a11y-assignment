@@ -22,26 +22,27 @@ window.addEventListener("DOMContentLoaded", () => {
     });    
   });
 
-  const modalTarget = document.querySelectorAll('.modal-target');
-  modalTarget.forEach((modalTarget)=> {
-    modalTarget.addEventListener('click', ()=>{
-      const modalWindow = document.querySelector('.modal');
-      showModal(modalWindow);
-    });
-  });
-  const modalBackdrop = document.querySelectorAll('.modal-backdrop');
-  modalBackdrop.forEach((modalBackdrop)=> {
-    modalBackdrop.addEventListener('click', (e) => {
-      if (e.target.className !== 'modal-close-button' && e.target.closest('.modal-body')) return;
 
-      const modalWindow = e.target.closest('.modal');
-      modalWindow.classList.remove('show-modal');
-    });
+  const sizeGuideShowBtn  = document.querySelector('.size-guide-button');
+  const sizeGuideModal    = document.querySelector('#sizeGuideModal');
+
+  sizeGuideShowBtn.addEventListener('click', () => {
+    sizeGuideModal.addEventListener('click', handleDialogClick);
+    handleLockBody(true)
+    sizeGuideModal.showModal();
   });
 
-  const showModal = (modalWindow) => {
-    modalWindow.classList.add('show-modal');
-  }
+  const handleDialogClick = (e) => {
+    if (e.target === e.currentTarget || e.target.classList.contains('modal-close-button')) {
+      sizeGuideModal.removeEventListener('click', handleDialogClick);
+      handleLockBody(false);
+      sizeGuideModal.close();
+    }
+  };
 
+  const handleLockBody = (locked) => {
+    document.body.style.paddingRight = locked ? `${window.innerWidth - document.documentElement.clientWidth}px` : 0;
 
+    document.body.classList.toggle('locked', locked);
+  };
 })
