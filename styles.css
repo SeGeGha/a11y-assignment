@@ -23,9 +23,9 @@
 }
 
 :root {
-  --text-color-primary: #717b90;
+  --text-color-primary: #424a5b;
   --text-color-light: #5e626b;
-  --link-color-primary: #b4bac4;
+  --link-color-primary: #48494b;
   --border-color-primary: #1a1f29;
   --border-color-light: #cccccc;
   --brand-blue: #171c8f;
@@ -37,7 +37,6 @@
 
 a {
   text-decoration: none;
-  outline: none;
 }
 
 p {
@@ -65,6 +64,10 @@ body {
   background-color: #fff;
 }
 
+body.locked {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -84,7 +87,6 @@ button {
   background: none;
   padding: 0;
   margin: 0;
-  outline: none;
 }
 
 button {
@@ -707,7 +709,7 @@ fieldset legend {
   height: 50px;
 }
 
-.size-guide-link {
+.size-guide-button {
   display: block;
   margin-top: 10px;
   padding: 10px 0;
@@ -743,6 +745,14 @@ fieldset legend {
   flex-direction: column;
   gap: 20px;
   border-radius: 2px;
+}
+
+.modal-close-button {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .show-modal {
@@ -1087,4 +1097,17 @@ fieldset legend {
   margin-left: 4px;
   margin-right: 4px;
   margin-bottom: 8px;
+}
+
+.skip-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  padding: 10px 15px;
+  background: #F498AD;
+}
+
+.skip-link:focus {
+  left: 0;
 }

@@ -46,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalBackdrop = document.querySelectorAll('.modal-backdrop');
   modalBackdrop.forEach((modalBackdrop)=> {
     modalBackdrop.addEventListener('click', (e) => {
+      if (e.target.className !== 'modal-close-button' && e.target.closest('.modal-body')) return;
 
       const modalWindow = e.target.closest('.modal');
       modalWindow.classList.remove('show-modal');
