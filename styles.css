@@ -198,6 +198,10 @@ fieldset legend {
   align-items: center;
 }
 
+.form__input-group:first-of-type {
+  order: 1;
+}
+
 .header {
   padding-top: 29px;
   padding-bottom: 31px;
@@ -835,6 +839,10 @@ dialog.modal {
   left: 0;
   top: 0;
   z-index: 0;
+}
+
+.input-radio__input:focus ~ .input-radio__visual {
+  outline: 1px var(--border-color-primary) solid;
 }
 
 .input-radio__visual {
