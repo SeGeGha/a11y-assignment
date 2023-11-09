@@ -3,7 +3,7 @@ const modalOpenBtns = document.querySelectorAll('.modal-target');
 const handleModalClick = event => {
     const modal = event.currentTarget;
 
-    if (event.target === modal || event.target.classList.contains('modal-close-button')) {
+    if (event.target === modal || event.target.closest('.modal-close-button')) {
         modal.removeEventListener('click', handleModalClick);
         handleLockBody(false);
         modal.close();
