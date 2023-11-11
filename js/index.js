@@ -33,21 +33,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const inputsQuantity = document.querySelectorAll('.input-quantity');
     inputsQuantity.forEach((input) => {
-        const inputField = input.querySelector('.input-quantity__field');
+        const inputField       = input.querySelector('.input-quantity__field');
+        const quantityText     = input.querySelector('.s-r-quantity');
         const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
         const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
 
         inputBtnIncrease.addEventListener('click', () => {
             const initialValue = inputField.value * 1;
 
-            inputField.value = initialValue + 1;
+            inputField.value       = initialValue + 1;
+            quantityText.innerText = inputField.value;
 
             updateTotalPrice();
         });
         inputBtnDecrease.addEventListener('click', () => {
             const initialValue = inputField.value * 1;
             if (initialValue > 1) {
-                inputField.value = initialValue - 1;
+                inputField.value       = initialValue - 1;
+                quantityText.innerText = inputField.value;
 
                 updateTotalPrice();
             }

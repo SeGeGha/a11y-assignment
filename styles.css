@@ -202,6 +202,24 @@ fieldset legend {
   order: 1;
 }
 
+.form__input {
+  position: relative;
+}
+
+.form__input span {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+}
+
+.form__input input:focus ~ span {
+  position: absolute;
+  top: 10px;
+  font-size: 10px;
+}
+
 .header {
   padding-top: 29px;
   padding-bottom: 31px;
