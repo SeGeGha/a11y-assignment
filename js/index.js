@@ -1,11 +1,34 @@
 import ('./modal.js');
 
+
+const prices = {
+    White         : 40,
+    Black         : 45,
+    Gray          : 55,
+    'Purple latte': 65,
+}
+
+const updateTotalPrice = () => {
+    const inputsColor = document.querySelectorAll('.input-radio__input[name="product_color"]');
+    const priceText   = document.querySelector('.product-card__price');
+    const inputField  = document.querySelector('.input-quantity__field');
+
+    const price        = prices[Array.from(inputsColor).find(input => input.checked).dataset.nameDisplay];
+    const [ currency ] = priceText.innerText.split(' ');
+
+    priceText.innerText = `${currency} ${+price * inputField.value}`
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     const formColorLabel  = document.getElementById('productColorValue');
     const inputColorGroup = document.querySelector('.input-group');
 
     inputColorGroup.addEventListener('change', event => {
-        formColorLabel.innerText = event.target.dataset.nameDisplay;
+        const { nameDisplay } = event.target.dataset
+
+        formColorLabel.innerText = nameDisplay;
+
+        updateTotalPrice();
     });
 
     const inputsQuantity = document.querySelectorAll('.input-quantity');
@@ -13,13 +36,21 @@ window.addEventListener("DOMContentLoaded", () => {
         const inputField = input.querySelector('.input-quantity__field');
         const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
         const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
+
         inputBtnIncrease.addEventListener('click', () => {
             const initialValue = inputField.value * 1;
+
             inputField.value = initialValue + 1;
+
+            updateTotalPrice();
         });
         inputBtnDecrease.addEventListener('click', () => {
             const initialValue = inputField.value * 1;
-            if (initialValue > 1) inputField.value = initialValue - 1;
+            if (initialValue > 1) {
+                inputField.value = initialValue - 1;
+
+                updateTotalPrice();
+            }
         });
     });
 })
