@@ -57,7 +57,10 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        inputField.addEventListener('input', updateTotalPrice);
+        inputField.addEventListener('input', ({target}) => {
+            quantityText.innerText = target.value;
+            updateTotalPrice();
+        });
 
         inputField.addEventListener('focus', () => {
             quantityText.setAttribute('aria-hidden', 'true');
