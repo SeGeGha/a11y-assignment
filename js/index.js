@@ -46,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
             updateTotalPrice();
         });
+
         inputBtnDecrease.addEventListener('click', () => {
             const initialValue = inputField.value * 1;
             if (initialValue > 1) {
@@ -54,6 +55,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
                 updateTotalPrice();
             }
+        });
+
+        inputField.addEventListener('input', updateTotalPrice);
+
+        inputField.addEventListener('focus', () => {
+            quantityText.setAttribute('aria-hidden', 'true');
+        });
+
+        inputField.addEventListener('blur', () => {
+            quantityText.removeAttribute('aria-hidden');
         });
     });
 })

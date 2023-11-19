@@ -11,7 +11,7 @@
 		<div class="main-grid">
 			<header class="header">
 				<div class="container header__container">
-					<a class="skip-link" href="#skipLinkTarget">Go to product card</a>
+					<a class="skip-link" href="#skipLinkTarget">Skip content</a>
 					<nav class="header__menu-main" aria-label="Primary">
 						<ul class="menu">
 							<li class="menu__item">
@@ -79,9 +79,9 @@
 
 					<section class="product-card" aria-labelledby="productName">
 						<div class="product-card__row">
-							<a class="product-card__photo-big" href="#">
+							<div class="product-card__photo-big">
 								<img class="product-card__photo-big-picture" src="images/photo1.jpg" srcset="images/photo1_x2.jpg 2x" alt="Girl in white t-shirt.">
-							</a>
+							</div>
 
 							<div>
 								<h1 class="product-card__title" id="productName">White unisex t-shirt</h1>
@@ -400,16 +400,16 @@
 							<h2 class="footer__heading" id="subscribeSectionTitle">Subscribe</h2>
 							<form class="form" action="#">
 								<div class="form__input-group">
-									<label>
-										<input class="checkbox" type="checkbox" name="agree" id="agree" required>
-										I agree to give you all my data
-									</label>
-								</div>
-								<div class="form__input-group">
 									<label class="form__input">
 										<input class="input" type="email" name="email" id="email" required placeholder="">
 										<span>Email</span>
 									</label>
+
+									<label>
+										<input class="checkbox" type="checkbox" name="agree" id="agree" required>
+										I agree to give you all my data
+									</label>
+
 									<button type="submit" class="btn btn_primary">Subscribe</button>
 								</div>
 							</form>
