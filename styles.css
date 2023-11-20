@@ -199,12 +199,10 @@ fieldset legend {
   align-items: center;
 }
 
-.form__input-group .form__input {
+.form__input-group label {
+  display: inline-flex;
+  column-gap: 4px;
   width: 100%;
-}
-
-.form__input-group label:last-of-type {
-  order: 3;
 }
 
 .form__input {

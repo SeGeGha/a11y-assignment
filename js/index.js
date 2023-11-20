@@ -8,10 +8,11 @@ const prices = {
     'Purple latte': 65,
 }
 
-const updateTotalPrice = () => {
-    const inputsColor = document.querySelectorAll('.input-radio__input[name="product_color"]');
-    const priceText   = document.querySelector('.product-card__price');
-    const inputField  = document.querySelector('.input-quantity__field');
+const updateTotalPrice = node => {
+    const productCard = node.closest('.product-card');
+    const inputsColor = productCard.querySelectorAll('.input-radio__input[name="product_color"]');
+    const priceText   = productCard.querySelector('.product-card__price');
+    const inputField  = productCard.querySelector('.input-quantity__field');
 
     const price        = prices[Array.from(inputsColor).find(input => input.checked).dataset.nameDisplay];
     const [ currency ] = priceText.innerText.split(' ');
@@ -28,11 +29,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         formColorLabel.innerText = nameDisplay;
 
-        updateTotalPrice();
+        updateTotalPrice(inputColorGroup);
     });
 
     const inputsQuantity = document.querySelectorAll('.input-quantity');
-    inputsQuantity.forEach((input) => {
+    inputsQuantity.forEach(input => {
         const inputField       = input.querySelector('.input-quantity__field');
         const quantityText     = input.querySelector('.s-r-quantity');
         const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
@@ -44,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
             inputField.value       = initialValue + 1;
             quantityText.innerText = inputField.value;
 
-            updateTotalPrice();
+            updateTotalPrice(input);
         });
 
         inputBtnDecrease.addEventListener('click', () => {
@@ -53,13 +54,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 inputField.value       = initialValue - 1;
                 quantityText.innerText = inputField.value;
 
-                updateTotalPrice();
+                updateTotalPrice(input);
             }
         });
 
-        inputField.addEventListener('input', ({target}) => {
+        inputField.addEventListener('input', ({ target }) => {
             quantityText.innerText = target.value;
-            updateTotalPrice();
+            updateTotalPrice(input);
         });
 
         inputField.addEventListener('focus', () => {
