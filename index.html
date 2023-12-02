@@ -11,11 +11,11 @@
 		<div class="main-grid">
 			<header class="header">
 				<div class="container header__container">
-					<a class="skip-link" href="#skipLinkTarget">Skip content</a>
+					<a class="skip-link" href="#skipLinkTarget">Go to content</a>
 					<nav class="header__menu-main" aria-label="Primary">
 						<ul class="menu">
 							<li class="menu__item">
-								<a class="menu__link" href="#" aria-current="page">Women</a>
+								<a class="menu__link" href="#">Women</a>
 							</li>
 							<li class="menu__item">
 								<a class="menu__link" href="#">Men</a>
@@ -61,9 +61,9 @@
 				</div>
 			</header>
 
-			<main class="page-content">
+			<main class="page-content" id="skipLinkTarget">
 				<div class="container">
-					<nav aria-label="Breadcrumb" id="skipLinkTarget">
+					<nav aria-label="Breadcrumb">
 						<ol class="breadcrumbs">
 							<li class="breadcrumbs__item">
 								<a class="breadcrumbs__link" href="#">Home</a>
@@ -72,7 +72,7 @@
 								<a class="breadcrumbs__link" href="#">Women</a>
 							</li>
 							<li class="breadcrumbs__item breadcrumbs__item_active">
-								<span class="breadcrumbs__current" aria-current="location">White unisex t-shirt</span>
+								<span class="breadcrumbs__current" aria-current="page">White unisex t-shirt</span>
 							</li>														
 						</ol>
 					</nav>
@@ -327,7 +327,7 @@
 			<footer class="footer">
 				<div class="container footer__container">
 					<div class="footer__columns">
-						<section class="footer__col" aria-labelledby="aboutColumnTitle">
+						<div class="footer__col">
 							<h2 class="footer__heading" id="aboutColumnTitle">About</h2>
 							<div class="footer__address">
 								<p>Susparsa Store</p>
@@ -351,13 +351,13 @@
 									</li>
 								</ul>
 							</div>
-						</section>
-						<section class="footer__col" aria-labelledby="companyColumnTitle">
+						</div>
+						<div class="footer__col">
 							<h2 class="footer__heading" id="companyColumnTitle">Company</h2>
 							<nav aria-label="Footer primary">
 								<ul class="footer__list">
 									<li class="footer__list-item">
-										<a class="footer__list-link" href="#" aria-current="page">Woman</a>
+										<a class="footer__list-link" href="#">Woman</a>
 									</li>
 									<li class="footer__list-item">
 										<a class="footer__list-link" href="#">Men</a>
@@ -373,8 +373,8 @@
 									</li>
 								</ul>								
 							</nav>
-						</section>
-						<section class="footer__col" aria-labelledby="usefulLinksSectionTitle">
+						</div>
+						<div class="footer__col">
 							<h2 class="footer__heading" id="usefulLinksSectionTitle">Useful links</h2>
 							<div>
 								<ul class="footer__list">
@@ -395,8 +395,8 @@
 									</li>
 								</ul>									
 							</div>
-						</section>
-						<section class="footer__col" aria-labelledby="subscribeSectionTitle">
+						</div>
+						<div class="footer__col">
 							<h2 class="footer__heading" id="subscribeSectionTitle">Subscribe</h2>
 							<form class="form" action="#">
 								<div class="form__input-group">
@@ -413,14 +413,14 @@
 									<button type="submit" class="btn btn_primary">Subscribe</button>
 								</div>
 							</form>
-						</section>
+						</div>
 					</div>
 					<small class="footer__copyright">© Susparsa 2021</small>
 				</div>
 			</footer>
 		</div>
 
-		<dialog aria-modal="true" id="sizeGuideModal" class="modal" aria-labelledby="size-guide-modal-title" aria-describedby="size-guide-modal-description">
+		<dialog aria-modal="true" id="sizeGuideModal" class="modal" aria-labelledby="size-guide-modal-title">
 			<div class="modal-body size-guide">
 				<button autofocus type="button" class="modal-close-button">
 					<span class="v-h">Close</span>
