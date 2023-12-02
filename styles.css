@@ -194,12 +194,15 @@ fieldset legend {
 }
 .form__input-group {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
 }
 
-.form__input-group:first-of-type {
-  order: 1;
+.form__input-group label {
+  display: inline-flex;
+  column-gap: 4px;
+  width: 100%;
 }
 
 .form__input {
